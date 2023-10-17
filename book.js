@@ -48,6 +48,7 @@ addBookForm.addEventListener("submit", function (e) {
         });
 })
 
+var i = 1;
 
 /**
  * Add another author to the form when the + button is clicked
@@ -59,9 +60,13 @@ function addAuthor() {
     newAuthorInput.name = "author";
     newAuthorInput.className = "form-control";
     newAuthorInput.required = true;
+    newAuthorInput.classList.add("row");
+    newAuthorInput.id = "author" + i.toString();
 
-    const authorContainer = document.querySelector(".input-group");
+    const authorContainer = document.getElementById("author-container");
     authorContainer.appendChild(newAuthorInput);
+    i++;
+    console.log(i);
 }
 
 
@@ -77,13 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }).then(response => response.json())
         .then(publishers => {
             populateDropdown('publisherList', publishers)
-
-
         })
         .catch(error => {
             console.error('Error fetching genre data:', error)
         })
-
 })
 
 /**
@@ -98,12 +100,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }).then(response => response.json())
         .then(genres => {
             populateDropdown('genreList', genres)
-
         })
         .catch(error => {
             console.error('Error fetching genre data:', error)
         })
-
 })
 
 /**
