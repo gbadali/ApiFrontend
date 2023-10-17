@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A Book</title>
+</head>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+
+            <h1>Add A Book to the Library</h1>
+            <form id="addBookForm">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="title" id="title" class="form-control" required>
+
+                <div class="input-group">
+                    <label for="author" class="col-form-label">Author:</label>
+                    <div class="row mb-3">
+                        <input type="text" name="author" id="author" class="form-control" required>
+                        <button type="button" onClick="addAuthor()"
+                            class="btn btn-primary btn-md float-right">+</button>
+                    </div>
+                </div>
+
+                <label for="isbn" class="form-label">ISBN:</label>
+                <input type="text" name="isbn" id="isbn" class="form-control" required>
+
+                <label for="publication_year" class="form-label">Publication Year:</label>
+                <input type="text" name="publication_year" id="publication_year" class="form-control">
+
+                <label for="publisher" class="form-label">Publisher:</label>
+                <input list="publisherList" type="text" name="publisher" id="publisher" class="form-control">
+
+                <label for="genres" class="form-label">Genre:</label>
+                <input list="genreList" type="text" name="genres" id="genre" class="form-control">
+
+                <label for="price" class="form-label">Price:</label>
+                <input type="text" name="price" id="price" class="form-control">
+
+                <label for="stock_quantity" class="form-label">Stock Quantitity:</label>
+                <input type="text" name="stock_quantity" id="stock_quantity" class="form-control">
+
+
+                <div class="d-grid gap-2">
+
+                    <button type="submit" class="btn btn-primary btn-lg" id="addBook">Add Book</button>
+
+                </div>
+
+
+
+            </form>
+        </div>
+
+    </div>
+
+    <datalist id="genreList">
+    </datalist>
+
+    <datalist id="publisherList">
+    </datalist>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="book.js"></script>
+</body>
+
+</html>
